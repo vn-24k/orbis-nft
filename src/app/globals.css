@@ -1,10 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Condiment&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: #010828;
-  color: #EFF4FF;
-  margin: 0;
-  font-family: ui-monospace, monospace;
+:root {
+  --background: #010828;
+  --foreground: #EFF4FF;
+  --cream: #EFF4FF;
+  --neon: #6FFF00;
+}
+
+@layer base {
+  body {
+    background-color: #010828;
+    color: #EFF4FF;
+    font-family: ui-monospace, monospace;
+    overflow-x: hidden;
+    antialiased: true;
+  }
+}
+
+.font-grotesk {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+}
+
+.font-condiment {
+  font-family: 'Condiment', cursive;
+  text-transform: none;
+}
+
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg, 
+    rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%, 
+    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, 
+    rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
