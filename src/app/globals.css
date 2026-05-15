@@ -2,13 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #010828;
-  --foreground: #EFF4FF;
-}
-
 body {
   background-color: #010828;
   color: #EFF4FF;
   margin: 0;
+  font-family: ui-monospace, monospace;
 }
